@@ -1079,6 +1079,26 @@ function loadCSS(e,t,o){"use strict";var i=window.document.createElement("link")
     <h2>Selamat Datang!</h2>
     <button onclick="logout()">Logout</button>
     <script>
+      // Mengambil elemen form login dan kontainer login
+const loginForm = document.getElementById('login-form');
+const loginContainer = document.getElementById('login-container');
+
+// Mengubah properti display dari form login menjadi block
+// dan kontainer login menjadi none (sembunyikan) saat halaman dimuat
+document.addEventListener('DOMContentLoaded', () => {
+    loginForm.style.display = 'block';
+    loginContainer.style.display = 'none';
+});
+
+// Fungsi untuk menampilkan form login
+function showLoginForm() {
+    loginForm.style.display = 'block';
+    loginContainer.style.display = 'none';
+}
+
+// Panggil fungsi ini ketika Anda ingin menampilkan form login
+showLoginForm();
+
       document.addEventListener('DOMContentLoaded', (event) => {
       if (localStorage.getItem('isLoggedIn') === 'true') {
           document.getElementById('welcome-message').style.display = 'block';
