@@ -1,6 +1,61 @@
 <!DOCTYPE html>
 <HTML class='v2' dir='ltr'>
 <head>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.login-container {
+    position: fixed; /* Use absolute for IE11 */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-form {
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login-form button:hover {
+    background-color: #0056b3;
+}
+</style>
 <link href='https://www.blogger.com/static/v1/widgets/55013136-widget_css_bundle.css' rel='stylesheet' type='text/css'/>
 <meta content='width=device-width, initial-scale=1' name='viewport'/>
 <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
@@ -1017,46 +1072,43 @@ function loadCSS(e,t,o){"use strict";var i=window.document.createElement("link")
 
 </head>
 <body itemscope='itemscope' itemtype='http://schema.org/WebPage'>
-<div id="login-form" style="display: none;">
-  <h2>Login</h2>
-  <input type="text" id="username" placeholder="Username">
-  <input type="password" id="password" placeholder="Password">
-  <button onclick="login()">Login</button>
-</div>
-<div id="welcome-message" style="display: none;">
-  <h2>Selamat Datang!</h2>
-  <button onclick="logout()">Logout</button>
-  <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-    if (localStorage.getItem('isLoggedIn') === 'true') {
-        document.getElementById('welcome-message').style.display = 'block';
-    } else {
-        document.getElementById('login-form').style.display = 'block';
-    }
-});
-
-function login() {
-    // Simulasi proses login
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    // Pada praktik nyata, Anda harus mengirim ini ke server dan melakukan pengecekan
-    if (username === 'alqadr' && password === 'alqadrwafajr1293') {
-        localStorage.setItem('isLoggedIn', 'true');
-        window.location.reload(); // Reload halaman untuk update UI
-    } else {
-        alert('Login failed!');
-    }
-}
-
-function logout() {
-    localStorage.removeItem('isLoggedIn');
-    window.location.reload(); // Reload halaman untuk update UI
-}
-
-  </script>
-</div>
-<body itemscope='itemscope' itemtype='http://schema.org/WebPage'>
+  <div id="login-form" style="display: none;">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+  <div id="welcome-message" style="display: none;">
+    <h2>Selamat Datang!</h2>
+    <button onclick="logout()">Logout</button>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+      if (localStorage.getItem('isLoggedIn') === 'true') {
+          document.getElementById('welcome-message').style.display = 'block';
+      } else {
+          document.getElementById('login-form').style.display = 'block';
+      }
+  });
+  
+  function login() {
+      // Simulasi proses login
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+  
+      // Pada praktik nyata, Anda harus mengirim ini ke server dan melakukan pengecekan
+      if (username === 'alqadr' && password === 'alqadrwafajr1293') {
+          localStorage.setItem('isLoggedIn', 'true');
+          window.location.reload(); // Reload halaman untuk update UI
+      } else {
+          alert('Login failed!');
+      }
+  }
+  
+  function logout() {
+      localStorage.removeItem('isLoggedIn');
+      window.location.reload(); // Reload halaman untuk update UI
+  }
+</script>  
 <header class='header-wrap'>
 <div class='header-wrapper'>
 <div class='header section' id='header'><div class='widget Header' data-version='1' id='Header1'>
