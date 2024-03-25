@@ -1016,6 +1016,45 @@ function loadCSS(e,t,o){"use strict";var i=window.document.createElement("link")
 <meta name='google-adsense-platform-domain' content='blogspot.com'/>
 
 </head>
+<div id="login-form" style="display: none;">
+  <h2>Login</h2>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+</div>
+<div id="welcome-message" style="display: none;">
+  <h2>Selamat Datang!</h2>
+  <button onclick="logout()">Logout</button>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+        document.getElementById('welcome-message').style.display = 'block';
+    } else {
+        document.getElementById('login-form').style.display = 'block';
+    }
+});
+
+function login() {
+    // Simulasi proses login
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Pada praktik nyata, Anda harus mengirim ini ke server dan melakukan pengecekan
+    if (username === 'alqadr' && password === 'alqadrwafajr1293') {
+        localStorage.setItem('isLoggedIn', 'true');
+        window.location.reload(); // Reload halaman untuk update UI
+    } else {
+        alert('Login failed!');
+    }
+}
+
+function logout() {
+    localStorage.removeItem('isLoggedIn');
+    window.location.reload(); // Reload halaman untuk update UI
+}
+
+  </script>
+</div>
 <body itemscope='itemscope' itemtype='http://schema.org/WebPage'>
 <header class='header-wrap'>
 <div class='header-wrapper'>
