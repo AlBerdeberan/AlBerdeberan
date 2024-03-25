@@ -9,37 +9,32 @@
     width: 100%;
 }
 
-.login-container {
-    position: fixed; /* Use absolute for IE11 */
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+#login-container {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    height: 100vh; /* Viewport Height: 100% of the viewport height */
+    width: 100vw; /* Viewport Width: 100% of the viewport width */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
 }
 
 #login-form {
     padding: 20px;
-    background: #fff;
+    background: white;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #login-form h2 {
     text-align: center;
-    margin-bottom: 20px;
 }
 
-#login-form input[type="text"],
-#login-form input[type="password"] {
+#login-form input {
+    display: block;
     width: 100%;
     padding: 10px;
     margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 #login-form button {
@@ -48,13 +43,13 @@
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
 #login-form button:hover {
     background-color: #0056b3;
 }
+
 </style>
 <link href='https://www.blogger.com/static/v1/widgets/55013136-widget_css_bundle.css' rel='stylesheet' type='text/css'/>
 <meta content='width=device-width, initial-scale=1' name='viewport'/>
